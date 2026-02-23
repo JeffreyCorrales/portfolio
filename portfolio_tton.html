@@ -88,7 +88,7 @@ Xbox One, PS4, PC, Linux, macOS<br />
                          <td valign="top"><h2><strong class="greenEntry"> Overview</strong></h2>
                            <h2><strong class="greenEntry"><br />
                            </strong></h2>
-                           <p>Torment: Tides of Numenera (TTON), like it's predecessor Planescape Torment, is a is story-driven RPG that places greater emphasis on interaction with the world and characters, while still providing combat and item accumulation as a secondary role. It uses pre-rendered 2.5D isometric perspective environments and follows the Numenera tabletop setting and ruleset.[<br />
+                           <p>Torment: Tides of Numenera (TTON), like it's predecessor Planescape Torment, is a is story-driven RPG that places greater emphasis on interaction with the world and characters, while still providing combat and item accumulation as a secondary role. It uses pre-rendered 2.5D isometric perspective environments and follows the Numenera tabletop setting and ruleset.<br />
                             <br />
                             On<strong> TTON</strong>, I was an engineer. My duties included:</p>
                                               <ul>
@@ -102,7 +102,7 @@ Xbox One, PS4, PC, Linux, macOS<br />
                                                 <li>So much more!</li>
                                               </ul>
                           <p></p>
-                          <p><br />
+                          <p>TTON was an opportunity for me to work alongside amazing senior engineers, develop good habits and gain valuable insight into systems that would later allow me to push the limits of what could be achieved on the design side.<br />
                           </p>
                         </td>
                        </tr>
@@ -112,12 +112,9 @@ Xbox One, PS4, PC, Linux, macOS<br />
                     <h2 class="greenEntry"><strong>Dark Fathom</strong><br />
                       <br />
                     </h2>
-                    <p>Proceduarlly generated floor - Optimzation, Culling solution for NPC heavy scenes<br />
-                      <br />
-                      X</p>
-                    <p>T</p>
-                    <p>Time range: <br />
-                    </p>
+                    <p>This level turned out to be a challenge in optimization. The floor was a procedurally generated mesh coded by one of our fractal enthusiasts. It ran poorly on low end pcs and abysmally on low end Macs. After some profilling I zeroed in on two culprits: object instantiation and array resizing. It turned out that relying on built-in arrays to dynamically resize themselves resulted in CPU intensive garbage collection. This was a problem we would later revisit with several convenience libraries such as Linq. The solution was a combination of object caching and proper memory allocation during initialization. As a result we achieved great FPS even on a cheap Mac Mini.<br />
+                    <br /></p>
+                    <p>In addition to hunting for memory leaks, and reducing garbage collection outside of loading screens I also assisted with our culling system to control CPU load in scenes with large amount of NPCs. I aslo worked to elminate the performance hits from Unity's FindObjectsOfType by caching frequently accessed data such as our combatant components.</p>
                     <p>
 <iframe width="853" height="480" src="https://www.youtube.com/embed/s1sNsdIVQJE" frameborder="0" allowfullscreen></iframe>                                           
                     </p>
@@ -125,9 +122,8 @@ Xbox One, PS4, PC, Linux, macOS<br />
                     <h2 class="greenEntry"><strong>Reef of Fallen Worlds</strong><br />
                       <br />
                     </h2>
-                    <p>VFX and Combat abilities, camera</p>
-                    <p>
-                      Time range: </p>
+                    <p>This level had one of the game's earliest "Crisis", the term used for high-stakes events such as combats, and I was tasked with two important combat elements - abilities and camera framing. I created a queue based solution that let our camera smoothly follow characters and projectiles and handled actions that could resolve into additional secondary actions. <br /></p>  
+                    <p>I created many interesting abilities such as usable turrets with conal sprays, teleportation, and chain-hook pulls and pushes. For these abilities I worked closesly with our VFX artists. This let me to revamp our VFX management system to make it easier for our artists to specify effects that could apply at the start or end of abilities, and assign variable durations amd visual priority.</p>
                     <p>
 <iframe width="853" height="480" src="https://www.youtube.com/embed/uje04TuFrvU" frameborder="0" allowfullscreen></iframe>                                           
                     </p>
